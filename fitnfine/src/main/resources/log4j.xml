@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<param name="threshold" value="error" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file" class="org.apache.log4j.rolling.RollingFileAppender">
+		<param name="threshold" value="debug" />
+		<rollingPolicy name="file"
+			class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+			<param name="FileNamePattern" value="${basedir}/logs/ta.log.%d{yyyy-MM-dd}.gz" />
+			<param name="ActiveFileName" value="${basedir}/logs/ta.log" />
+		</rollingPolicy>
+		<layout class="org.apache.log4j.EnhancedPatternLayout">
+			<param name="ConversionPattern" value="%d{ISO8601} %-5p: %c - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 3rdparty Loggers -->
+
+<!-- 	<logger name="org.hibernate">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="org.springframework.transaction">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="org.springframework.orm">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="org.springframework.beans">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="org.springframework.cache">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="net.sf.ehcache">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="org.hibernate.tool.hbm2ddl">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="com.googlecode">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+
+	<logger name="com.travel">
+		<appender-ref ref="file" />
+		<appender-ref ref="console"/>
+	</logger>
+ -->
+	<!-- Root Logger -->
+	<root>
+		<appender-ref ref="file" />
+	</root>
+
+</log4j:configuration>

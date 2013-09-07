@@ -1,0 +1,27 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/util 
+           http://www.springframework.org/schema/util/spring-util-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- SECTION FOR HIBERNATE MANAGED ENTITIES, REFERRED TO IN THE applicationContext.xml 
+		AND applicationContext-test.xml -->
+
+	<bean id="hibernateManagedEntities" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+			    <value>com.fitnfine.model.Doctor</value>
+				<value>com.fitnfine.model.Medicine</value>
+				<value>com.fitnfine.model.JobApplicant</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="shaPasswordEncoder"
+		class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
+		<constructor-arg value="256" />
+	</bean>
+</beans>

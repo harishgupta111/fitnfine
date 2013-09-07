@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" name="cacheManager"
+	updateCheck="false" monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="${basedir}/FFCache" />
+
+	<defaultCache eternal="false" timeToIdleSeconds="120"
+		timeToLiveSeconds="120" diskExpiryThreadIntervalSeconds="120"
+		memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="3600"
+		timeToLiveSeconds="3600">
+	</cache>
+
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="10000" eternal="true">
+	</cache>
+
+	<cache name="entity.FF_Doctor" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU">
+	</cache>
+
+	<cache name="entity.FF_Medicine" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU">
+	</cache>
+
+	<cache name="entity.FF_User" eternal="false" maxElementsInMemory="10000"
+		overflowToDisk="true" diskPersistent="true" timeToIdleSeconds="0"
+		timeToLiveSeconds="300" memoryStoreEvictionPolicy="LRU">
+	</cache>
+
+	<cache name="entity.FF_UserMaster" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU">
+	</cache>
+
+	<cache name="entity.FF_UserAuthorityMaster" eternal="false"
+		maxElementsInMemory="10000" overflowToDisk="true" diskPersistent="true"
+		timeToIdleSeconds="0" timeToLiveSeconds="300"
+		memoryStoreEvictionPolicy="LRU">
+	</cache>
+	
+</ehcache>

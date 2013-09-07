@@ -1,0 +1,11 @@
+INSERT INTO ff_doctor (doctorID,createDate, createdBy,updateDate, updatedBy,doctorAddress, doctorName,doctorSpecialization)
+VALUES('1', sysdate(), 'MASTER_DATA', sysdate(), 'MASTER_DATA', '123 Broad St', 'Doctor ID1', 'DNU');
+INSERT INTO ff_doctor (doctorID,createDate, createdBy,updateDate, updatedBy,doctorAddress, doctorName,doctorSpecialization)
+VALUES('2', sysdate(), 'MASTER_DATA', sysdate(), 'MASTER_DATA', '1 Broad St', 'Doctor ID2', 'ABC');
+INSERT INTO ff_medicine (medicineID, createDate, createdBy, updateDate, updatedBy, forAilment, medicineCost, medicineName)
+VALUES('1', sysdate(), 'MASTER_DATA', sysdate(), 'MASTER_DATA', 'Headache', 15.50, 'Disprin');
+INSERT INTO ff_medicine (medicineID, createDate, createdBy, updateDate, updatedBy, forAilment, medicineCost, medicineName)
+VALUES('2', sysdate(), 'MASTER_DATA', sysdate(), 'MASTER_DATA', 'Fever', 18.00, 'Combiflam');
+
+
+
